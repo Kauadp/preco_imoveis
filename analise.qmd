@@ -1,6 +1,16 @@
 ---
 title: "Análise de Preço dos Imóveis"
-format: html
+author: "Kauã Dias"
+format:
+  pdf:
+    documentclass: article
+    theme: moon
+    highlight-style: zenburn
+    geometry: 
+      - top=2cm
+      - left=2cm
+    fontsize: 11pt
+    linestretch: 1.5
 ---
 
 # 📌 Introdução
