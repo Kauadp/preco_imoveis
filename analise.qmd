@@ -70,6 +70,8 @@ dados |>
 ggsave('figuras/freq_cidade.png')
 
 ```
+![](figuras/freq_cidade.png)
+
 Talvez isso dê pois de acordo com o Ministério da Economia, que divulgou o Índice de Concorrência dos Municípios (ICM) referente ao ano de 2022, a Serra consta com a melhor avaliação do Espírito Santo.
 
 ```{r}
@@ -89,6 +91,7 @@ dados |>
 ggsave('figuras/dist_imov.png')
 
 ```
+![](figuras/dist_imov.png)
 
 A cidade de Vitória apresenta uma distribuição de preços bimodal, com picos de densidade em torno de R\$ 500 mil e acima de R\$ 2 milhões, sugerindo a coexistência de segmentos imobiliários distintos. Isso pode indicar a presença de desigualdade social dentro do município, refletida na diversidade de valores de imóveis. Por outro lado, cidades como Serra exibem uma distribuição mais uniforme, com preços mais concentrados em uma faixa intermediária, o que sugere maior homogeneidade no mercado imobiliário local. Assim como a cidade de Vila Velha é de certa forma mais uniforme porém com valores mais altos, indicando mais concentração de imóveis de luxo.
 
@@ -109,6 +112,7 @@ dados |>
 ggsave('figuras/boxplot_preco.png')
 
 ```
+![](figuras/boxplot_preco.png)
 
 Como visto, os valores se concentram em R\$ 1.000.000,00 para baixo, com alguns outliers, um deles, chama atenção por passar de R\$ 4.000.000,00.
 
@@ -132,6 +136,7 @@ dados |>
 ggsave('figuras/dist_zoom.png')
   
 ```
+![](figuras/dist_zoom.png)
 
 
 A distribuição de Vitória se parece muito com a de Serra, só que um pouco para direita, indicando que sua moda é maior, assim como Vila Velha é maior que Vitória, porém Vitória tem picos de densidade acumulada em valores mais altos.
@@ -154,6 +159,7 @@ dados |>
 ggsave('figuras/boxplot_cidades.png')
 
 ```
+![](figuras/boxplot_cidades.png)
 
 O boxplot mostra que Vila Velha possui os imóveis com maior valor. Vitória, embora com valores altos, tem uma distribuição mais dispersa, e a cidade da Serra aparece como intermediária, com presença de imóveis de menor padrão.
 
@@ -180,6 +186,7 @@ dados |>
 
 ggsave('figuras/quartos.png')
 ```
+![](figuras/quartos.png)
 
 Os dados apresentam uma leve contra intuitividade, com quatro quartos tendo a maior média de valor de imóvel.
 
@@ -205,6 +212,7 @@ dados |>
 ggsave('figuras/banheiros.png')
 
 ```
+![](figuras/banheiros.png)
 
 Os imóveis seguem a linha de raciocínio comum em que quanto mais banheiro um imóvel tem, maior o seu valor.
 
@@ -230,6 +238,7 @@ dados |>
 ggsave('figuras/garagens.png')
 
 ```
+![](figuras/garagens.png)
 
 Os imóveis com a maior média de preço possuem até três vagas.
 
@@ -251,6 +260,7 @@ dados |>
 ggsave('figuras/metro_quadrado.png')
 
 ```
+![](figuras/metro_quadrado.png)
 
 Para termos mais assertividade vamos transformar os dados e então montarmos o gráfico novamente.
 
@@ -272,6 +282,7 @@ dados |>
 ggsave('figuras/log_metro_quadrado.png')
 
 ```
+![](figuras/log_metro_quadrado.png)
 
 Os dados se adequaram bem melhor e indica uma boa relação de linearidade entre as variáveis.
 
@@ -300,3 +311,4 @@ saveRDS(dados_teste, "data/dados_teste.rds")
 saveRDS(modelo, 'modelo/modelo.rds')
 
 ```
+>>>>>>> 26bd2fc80db6ae3f5b72cbea5cf7ea3ce9ba92d1

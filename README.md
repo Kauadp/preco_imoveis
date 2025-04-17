@@ -7,18 +7,17 @@ Projeto de análise e modelagem preditiva usando dados reais de imóveis. Explor
 Prever o preço dos imóveis com base nas características do imóvel e localização.
 
 ## 📁 Estrutura
+- `data/`: dados utilizados
+- `modelo/`: arquivos de modelo treinado
+- `Raspagem e simuacao.qmd`: script de Web Scraping (Quarto)
+- `analise.qmd`: relatório reprodutível (Quarto)
+- `testar_modelo.R`: script em R para testar o modelo
 
--   `data/`: dados utilizados
--   `modelo/`: arquivos de modelo treinado
--   `Raspagem e simulacao.qmd/`: script de Web Scraping
--   `analise.ipynb`: relatório reprodutível
--   `testar_modelo.R`: script em R para testar o modelo 
 
 ## 🧪 Modelo
-
--   Tipo: Regressão Linear
--   R² obtido: **0.706**
--   Observações: Melhor desempenho nas faixas de preço intermediárias.
+- Tipo: Regressão Linear
+- R² obtido: **0.706**
+- Observações: Melhor desempenho nas faixas de preço intermediárias.
 
 ## 📈 Resultados
 
@@ -56,9 +55,9 @@ O site da OLX é dinâmico, a ocorrência de *bugs* e *tibble* com dimensçao 0x
 
 ## 📌 Conclusões
 
--   O modelo de regressão apresentou um desempenho **satisfatório** (R² = 0.696), especialmente na faixa de preços entre **500 mil e 1 milhão de reais**.
--   Algumas variáveis (como número de quartos e garagens) mostraram **não linearidade** e até **inversões inesperadas** no comportamento dos preços.
--   Há sinais de **desigualdade no mercado**, como evidenciado pela distribuição bimodal de preços em cidades como Vitória.
+- O modelo de regressão apresentou um desempenho **satisfatório** (R² = 0.706), especialmente na faixa de preços entre **500 mil e 1 milhão de reais**.
+- Algumas variáveis (como número de quartos e garagens) mostraram **não linearidade** e até **inversões inesperadas** no comportamento dos preços.
+- Há sinais de **desigualdade no mercado**, como evidenciado pela distribuição bimodal de preços em cidades como Vitória.
 
 ## 📚 Tecnologias
 
