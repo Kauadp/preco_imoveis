@@ -36,7 +36,7 @@ data.frame(
   scale_x_continuous("Preço Real (R$ milhões)", limits = c(0, 4)) +
   scale_y_continuous("Preço Predito (R$ milhões)", limits = c(0, 3)) +
   annotate("text", x = 1, y = 2.5, 
-           label = paste("R² =", round(resultados$metrics["Rsquared"], 3))) +
+           label = paste("R² =", round(resultado$metrics["Rsquared"], 3))) +
   labs(title = "Desempenho do Modelo por Faixa de Preço em Milhões") + 
   theme_fivethirtyeight()
 

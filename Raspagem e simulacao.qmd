@@ -278,5 +278,3 @@ write.csv2(dados, 'data/dados_raspados.csv', fileEncoding = 'ISO-8859-1')
 ```
 
 Com os novos dados, podemos continuar com o projeto.
-
-
