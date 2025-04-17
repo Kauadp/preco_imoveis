@@ -12,6 +12,7 @@ Prever o preço dos imóveis com base nas características do imóvel e localiza
 - `Raspagem e simuacao.qmd`: script de Web Scraping (Quarto)
 - `analise.qmd`: relatório reprodutível (Quarto)
 - `testar_modelo.R`: script em R para testar o modelo
+- `analise.pdf`: pdf gerado pela analise para visualização de gráficos
 
 
 ## 🧪 Modelo
