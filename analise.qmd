@@ -3,7 +3,7 @@ title: "Análise de Preço dos Imóveis"
 format: html
 ---
 
-# Introdução
+# 📌 Introdução
 
 Neste arquivo vamos:
 
@@ -12,6 +12,14 @@ Neste arquivo vamos:
 2- Breve análise exploratória dos dados;
 
 3- Ajustar um modelo que prevê o preço final do imóvel baseado nas variáveis disponíveis.
+
+## 📥 Objetivo
+
+Este documento realiza a **análise e modelagem** dos dados de imóveis utilizados na análise de preços.
+
+## 💻 Código
+
+Instalando e Carregando os Pacotes necessários
 
 ```{r}
 ## INSTALANDO E CARREGANDO OS PACOTES NECESSÁRIOS
@@ -46,7 +54,7 @@ head(dados,5)
 
 ```
 
-# Análise Exploratória
+## Análise Exploratória
 
 ```{r}
 ## ANALISANDO AS CIDADES QUE CONSTAM NA BASE DE DADOS
@@ -59,7 +67,10 @@ dados |>
   ggtitle('Serra com mais Frequência.') +
   xlab('Cidades')
 
+ggsave('figuras/freq_cidade.png')
+
 ```
+![](figuras/freq_cidade.png)
 
 Talvez isso dê pois de acordo com o Ministério da Economia, que divulgou o Índice de Concorrência dos Municípios (ICM) referente ao ano de 2022, a Serra consta com a melhor avaliação do Espírito Santo.
 
@@ -77,8 +88,11 @@ dados |>
     title = 'Valores dos imóveis seguem mesma distribuição.',
     subtitle = 'Valores estão acumulados em até pouco mais de R$ 2.000.000,00',
   )
+ggsave('figuras/dist_imov.png')
 
 ```
+![](figuras/dist_imov.png)
+
 A cidade de Vitória apresenta uma distribuição de preços bimodal, com picos de densidade em torno de R\$ 500 mil e acima de R\$ 2 milhões, sugerindo a coexistência de segmentos imobiliários distintos. Isso pode indicar a presença de desigualdade social dentro do município, refletida na diversidade de valores de imóveis. Por outro lado, cidades como Serra exibem uma distribuição mais uniforme, com preços mais concentrados em uma faixa intermediária, o que sugere maior homogeneidade no mercado imobiliário local. Assim como a cidade de Vila Velha é de certa forma mais uniforme porém com valores mais altos, indicando mais concentração de imóveis de luxo.
 
 ```{r}
@@ -94,10 +108,15 @@ dados |>
     subtitle = 'Outilier em mais de R$ 4.000.000,00 chama atenção'
   ) +
   theme_fivethirtyeight()
+
+ggsave('figuras/boxplot_preco.png')
+
 ```
+![](figuras/boxplot_preco.png)
+
 Como visto, os valores se concentram em R\$ 1.000.000,00 para baixo, com alguns outliers, um deles, chama atenção por passar de R\$ 4.000.000,00.
 
-Para melhor entendimento, vamos dar um _zoom_ no gráfico de densidade
+Para melhor entendimento, vamos dar um *zoom* no gráfico de densidade
 
 ```{r}
 
@@ -113,10 +132,14 @@ dados |>
     title = 'Valores dos imóveis seguem mesma distribuição.',
     subtitle = 'Serra tem a menor moda de todas as cidades'
   )
+
+ggsave('figuras/dist_zoom.png')
   
 ```
+![](figuras/dist_zoom.png)
 
-A distribuição de Vitória se parece muito com a de Serra, só que um pouco para direita, indicando que sua moda é maior, assim como Vila Velha é maior que Vitória, porém Vitória tem picos de densidade acumulada em valores mais altos. 
+
+A distribuição de Vitória se parece muito com a de Serra, só que um pouco para direita, indicando que sua moda é maior, assim como Vila Velha é maior que Vitória, porém Vitória tem picos de densidade acumulada em valores mais altos.
 
 ```{r}
 
@@ -133,7 +156,11 @@ dados |>
     subtitle = 'Juntamente com o Outiler visto anteriormente'
   )
 
+ggsave('figuras/boxplot_cidades.png')
+
 ```
+![](figuras/boxplot_cidades.png)
+
 O boxplot mostra que Vila Velha possui os imóveis com maior valor. Vitória, embora com valores altos, tem uma distribuição mais dispersa, e a cidade da Serra aparece como intermediária, com presença de imóveis de menor padrão.
 
 ## Analisando a relação entre as variáveis
@@ -156,8 +183,12 @@ dados |>
     subtitle = 'Apresenta não linearidade'
   ) +
   theme_fivethirtyeight()
+
+ggsave('figuras/quartos.png')
 ```
-Imóveis com apenas um quarto podem indicar _studios_ e/ou apartamentos comerciais bem localizados, imóveis com cinco quarto fogem do padrão e por isso também têm valor elevado.
+![](figuras/quartos.png)
+
+Os dados apresentam uma leve contra intuitividade, com quatro quartos tendo a maior média de valor de imóvel.
 
 ```{r}
 
@@ -178,7 +209,11 @@ dados |>
   ) +
   theme_fivethirtyeight()
 
+ggsave('figuras/banheiros.png')
+
 ```
+![](figuras/banheiros.png)
+
 Os imóveis seguem a linha de raciocínio comum em que quanto mais banheiro um imóvel tem, maior o seu valor.
 
 ```{r}
@@ -200,9 +235,12 @@ dados |>
   ) +
   theme_fivethirtyeight()
 
-```
-Os imóveis com a maior média de preço possuem até três vagas.
+ggsave('figuras/garagens.png')
 
+```
+![](figuras/garagens.png)
+
+Os imóveis com a maior média de preço possuem até três vagas.
 
 ```{r}
 
@@ -218,9 +256,12 @@ dados |>
     subtitle = 'Indica uma certa linearidade'
   ) +
   theme_fivethirtyeight()
-  
+
+ggsave('figuras/metro_quadrado.png')
 
 ```
+![](figuras/metro_quadrado.png)
+
 Para termos mais assertividade vamos transformar os dados e então montarmos o gráfico novamente.
 
 ```{r}
@@ -238,11 +279,12 @@ dados |>
   ) +
   theme_fivethirtyeight()
   
-
+ggsave('figuras/log_metro_quadrado.png')
 
 ```
-Os dados se adequaram bem melhor e indica uma boa relação de linearidade entre as variáveis.
+![](figuras/log_metro_quadrado.png)
 
+Os dados se adequaram bem melhor e indica uma boa relação de linearidade entre as variáveis.
 
 Vamos tentar ajustar um modelo
 
@@ -256,6 +298,7 @@ modelo <- lm(
 summary(modelo)
 
 ```
+
 O modelo se encaixa suficientemente bem, com todas variáveis estatisticamente significativas, uma amplitude de resíduos baixas e $R^2$ de 64,5%.
 
 Vamos salvar o modelo e um dataframe de teste e passar para a fase de testes.
@@ -268,4 +311,3 @@ saveRDS(dados_teste, "data/dados_teste.rds")
 saveRDS(modelo, 'modelo/modelo.rds')
 
 ```
- 
