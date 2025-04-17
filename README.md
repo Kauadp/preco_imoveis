@@ -15,7 +15,7 @@ Prever o preço dos imóveis com base nas características do imóvel e localiza
 
 ## 🧪 Modelo
 - Tipo: Regressão Linear
-- R² obtido: **0.696**
+- R² obtido: **0.706**
 - Observações: Melhor desempenho nas faixas de preço intermediárias.
 
 ## 📈 Resultados
@@ -46,7 +46,7 @@ O site da OLX é dinâmico, a ocorrência de _bugs_ e _tibble_ com dimensçao 0x
 
 ## 📌 Conclusões
 
-- O modelo de regressão apresentou um desempenho **satisfatório** (R² = 0.696), especialmente na faixa de preços entre **500 mil e 1 milhão de reais**.
+- O modelo de regressão apresentou um desempenho **satisfatório** (R² = 0.706), especialmente na faixa de preços entre **500 mil e 1 milhão de reais**.
 - Algumas variáveis (como número de quartos e garagens) mostraram **não linearidade** e até **inversões inesperadas** no comportamento dos preços.
 - Há sinais de **desigualdade no mercado**, como evidenciado pela distribuição bimodal de preços em cidades como Vitória.
 
