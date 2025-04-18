@@ -60,6 +60,12 @@ O site da OLX é dinâmico, a ocorrência de *bugs* e *tibble* com dimensçao 0x
 - Algumas variáveis (como número de quartos e garagens) mostraram **não linearidade** e até **inversões inesperadas** no comportamento dos preços.
 - Há sinais de **desigualdade no mercado**, como evidenciado pela distribuição bimodal de preços em cidades como Vitória.
 
+## 🏠 Aplicação prática
+
+Como forma de teste informal e contextualização prática, utilizei o modelo para estimar o valor de mercado de um imóvel real — a casa dos meus avós — localizada no bairro Barcelona, na cidade de Serra/ES. O valor estimado foi de aproximadamente R$ 452.000.
+
+Após uma análise dos anúncios atuais no portal Viva Real, verifiquei que esse valor está alinhado com os preços médios praticados para imóveis semelhantes na mesma região. Essa consistência sugere que, mesmo com simplicidade, o modelo pode ser uma ferramenta útil para análises exploratórias de preços imobiliários em contextos reais.
+
 ## 📚 Tecnologias
 
 -   R
