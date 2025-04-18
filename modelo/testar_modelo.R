@@ -1,7 +1,7 @@
 
 # LENDO O MODELO E A BASE DE DADOS DE TESTE
-dados_teste <- readRDS('data/dados_teste.rds')
-modelo <- readRDS('modelo/modelo.rds')
+dados_teste <- readRDS('../data/dados_teste.rds')
+modelo <- readRDS('modelo.rds')
 
 # CRIANDO UMA FUNÇÃO PARA USAR O MODELO
 avaliar_modelo <- function(modelo, dados_teste) {
@@ -42,3 +42,16 @@ data.frame(
 
 # SALVANDO O GRAFICO
 ggsave('modelo/performance.png')
+
+# DE BRINCADEIRA, VAMOS TESTAR O MODELO NA CASA DOS MEUS AVÓS
+
+vovo <- data.frame(
+  metros_quadrados = 60,
+  cidade = 'Serra',
+  quartos = 3,
+  banheiros = 2
+)
+
+vovo$preco <- 10^predict(modelo, newdata = vovo)
+vovo
+
