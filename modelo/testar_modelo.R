@@ -1,7 +1,7 @@
 
 # LENDO O MODELO E A BASE DE DADOS DE TESTE
-dados_teste <- readRDS('../data/dados_teste.rds')
-modelo <- readRDS('modelo.rds')
+dados_teste <- readRDS('data/dados.rds')
+modelo <- readRDS('modelo/modelo.rds')
 
 # CRIANDO UMA FUNÇÃO PARA USAR O MODELO
 avaliar_modelo <- function(modelo, dados_teste) {
@@ -36,7 +36,7 @@ data.frame(
   scale_x_continuous("Preço Real (R$ milhões)", limits = c(0, 4)) +
   scale_y_continuous("Preço Predito (R$ milhões)", limits = c(0, 3)) +
   annotate("text", x = 1, y = 2.5, 
-           label = paste("R² =", round(resultados$metrics["Rsquared"], 3))) +
+           label = paste("R² =", round(resultado$metrics["Rsquared"], 3))) +
   labs(title = "Desempenho do Modelo por Faixa de Preço em Milhões") + 
   theme_fivethirtyeight()
 
